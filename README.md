@@ -1,1 +1,1 @@
-# revou-coding-camp-day1
+# revou-coding-camp
