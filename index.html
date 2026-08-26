@@ -11,7 +11,7 @@
 <body class="bg-gray-100 text-gray-800 font-sans">
 
     <!-- NAVBAR -->
-    <nav class="bg-blue-600 text-white sticky top-0 z-50 shadow-md">
+    <nav class="bg-blue-500 text-white sticky top-0 z-50 shadow-md">
         <div class="max-w-4xl mx-auto px-4 py-3 flex items-center justify-between">
             <span class="text-lg sm:text-xl font-bold tracking-wide">📚 Revou Coding Camp</span>
             <span class="text-xs sm:text-sm bg-blue-500 px-3 py-1 rounded-full">Day 1 — HTML & CSS</span>
@@ -144,6 +144,7 @@
                 <div>
                     <label class="block text-teal-700 font-medium mb-1 text-sm sm:text-base">Nama</label>
                     <input
+                        id="nama"
                         type="text"
                         placeholder="Masukkan nama..."
                         class="w-full border border-teal-300 rounded-xl px-4 py-2 sm:py-3 text-sm sm:text-base focus:outline-none focus:ring-2 focus:ring-teal-400 bg-white transition"
@@ -169,6 +170,7 @@
                             <option>Hijau</option>
                         </select>
                         <button
+                            id="btnKirim"
                             type="submit"
                             class="bg-teal-500 hover:bg-teal-600 active:bg-teal-700 text-white font-semibold px-6 py-2 sm:py-3 rounded-full shadow transition text-sm sm:text-base"
                         >
@@ -187,6 +189,19 @@
         <p class="text-sm sm:text-base font-medium">✨ Revou Coding Camp — Day 1 HTML & CSS</p>
         <p class="text-xs sm:text-sm text-blue-200 mt-1">Dibuat dengan semangat belajar 🚀</p>
     </footer>
+
+    <script>
+        const tombol = document.getElementById("btnKirim");
+        const nama = document.getElementById("nama");
+
+        tombol.addEventListener('click', e => {
+            e.preventDefault();
+            const nomorWA = "6281249463759"; // ganti dengan nomor WhatsApp tujuan
+            const pesan = `Halo, nama saya ${nama.value || "seseorang"}. Saya ingin mengirim pesan!`;
+            const url = `https://wa.me/${nomorWA}?text=${encodeURIComponent(pesan)}`;
+            window.open(url, '_blank');
+        });
+    </script>
 
 </body>
 
